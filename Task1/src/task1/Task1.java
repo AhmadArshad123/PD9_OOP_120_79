@@ -56,6 +56,21 @@ public class Task1 {
         return count;
     }
     
+     public static int puncCount(String s){
+        int count = 0;
+        int len=s.length();
+        char [] arr = new char[len];
+        arr=s.toCharArray();
+        for(int i=0 ; i<len ; i++)
+        {
+            if(!(arr[i]>='A'&& arr[i]<='Z' || arr[i]>='a'&& arr[i]<='z' || arr[i]>='0'&& arr[i]<='9' || arr[i]==' ' ) )
+            {
+                count++;
+            }
+        }
+    return count;
+    } 
+    
     public static void main(String[] args) {
         // TODO code application logic here
         Scanner s;
@@ -65,7 +80,8 @@ public class Task1 {
         String input;
         input=s.nextLine();
         int noofword=wordCounter(input);
-         int noofvowels=vowelcounter(input);
+        int noofvowels=vowelcounter(input);
+        int noofpun=puncCount(input);
     }
     
 }
