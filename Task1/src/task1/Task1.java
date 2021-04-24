@@ -16,7 +16,7 @@ public class Task1 {
     /**
      * @param args the command line arguments
      */
-    
+    //Function to count words in the given String
     public static int wordCounter(String s){
         int count=0;
         int len=s.length();
@@ -36,6 +36,7 @@ public class Task1 {
         
     }
     
+    //Function to count vowels in the given String
     public static int vowelcounter(String s)
     {
         int count = 0;
@@ -56,6 +57,7 @@ public class Task1 {
         return count;
     }
     
+    //Function to count punctuations in the given String
      public static int puncCount(String s){
         int count = 0;
         int len=s.length();
@@ -71,6 +73,23 @@ public class Task1 {
     return count;
     } 
     
+     //Function to count find substring "the" in the given program
+      public static boolean findSubString(String s, String sub)
+    {
+        boolean flag=false;
+        int len = s.length();
+        char [] arr = new char[len];
+        arr=s.toCharArray();
+        for(int i=0 ; i<len-2 ; i++)
+        {
+            if(arr[i]=='t' && arr[i+1]=='h' && arr[i+2]=='e')
+            {
+                flag=true;
+            }
+        }
+        return flag;
+    }
+     
     public static void main(String[] args) {
         // TODO code application logic here
         Scanner s;
@@ -82,6 +101,19 @@ public class Task1 {
         int noofword=wordCounter(input);
         int noofvowels=vowelcounter(input);
         int noofpun=puncCount(input);
+        String ss;
+        boolean check=findSubString(input, "the");
+        if(check==true)
+        {
+            ss="\"the\" is a part of this string";
+        }
+        else{
+        ss="\"the\" is a not the part of this string";
+        }
+        System.out.print( "Number of words: "+ noofword +"\n" +"Number of Vovels: " +noofvowels +"\n"
+                +"Number of Punctuations: "+ noofpun +"\n"+ss);
+        
+        }
     }
     
-}
+
