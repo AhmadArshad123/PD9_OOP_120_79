@@ -11,13 +11,11 @@ import java.util.*;
  * @author ur919
  */
 public class Task2 {
-    static void displayStringVerical(String s){
-        System.out.println("Your Sentence Printed Vertically is:");
-        for(int i=0 ;i< s.length();i++)
-        {
-            if(s.charAt(i)!=' ')
-            System.out.println(s.charAt(i));
-        }
+    static char[] displayStringVerical(String s){
+        int length = s.length();
+        char [] arr = new char [length];
+        arr = s.toCharArray();
+        return arr;
     }
     /**
      * @param args the command line arguments
@@ -27,7 +25,12 @@ public class Task2 {
     Scanner reader= new Scanner (System.in);
     System.out.println("Please Enter a Sentence:");
     String input = reader.nextLine();
-    displayStringVerical(input);
+    char [] arr = displayStringVerical(input);
+    for( int i= 0 ;i<arr.length;i++)
+    {
+        if(arr[i]!= ' ')
+        System.out.println(arr[i]);
+    }
     }
     
 }
