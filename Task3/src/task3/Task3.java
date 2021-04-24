@@ -5,7 +5,10 @@
  */
 package task3;
 
+
+import java.util.Random;
 import java.util.Scanner;
+
 
 /**
  *
@@ -31,6 +34,31 @@ public class Task3 {
         return s;
     }
     
+    public static String stringEncryption(String s)
+    {
+                int length = s.length();
+        String numbers = "0123456789";
+        String upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        String lowerCase = "abcdefghijklmnopqrstuvwxyz";
+    
+        StringBuilder builder = new StringBuilder();
+    
+        String alphaNumeric = upperCase + lowerCase + numbers;
+   
+    
+        Random random = new Random();
+        for(int i = 0; i < length/4; i++) 
+        {
+            int get = random.nextInt(alphaNumeric.length());
+            char Char = alphaNumeric.charAt(get);
+            builder.append(Char);
+        }
+
+        String encryptionString = builder.toString();
+        return encryptionString;    
+    }
+    
+    
     
     public static void main(String[] args) {
         // TODO code application logic here
@@ -46,6 +74,11 @@ public class Task3 {
         input=s.nextLine();
         after = removeInteger(input);
         System.out.println(after);
+        System.out.println("Input String for encryption");
+        input=s.nextLine();
+        after=stringEncryption(input);
+        System.out.println(after);
+        
     }
     
 }
